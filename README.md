@@ -1,6 +1,6 @@
 
-# Project Title  
-Lascar's parametable equation plot !
+# Lascar's parametable equation plot
+
 Plot 10 equations using Python formula. The Python Math Library and all its functions are available. For more information, refer to the [Python Math Library documentation](https://docs.python.org/3/library/math.html). 
 
 
@@ -42,7 +42,7 @@ y0=$a*x+$b
 y1=$y0*12.34
 ~~~
 
-It's ugly but it works fine !
+It's ugly but it works fine ! It's a tool perfect to find equations solutions or application dev which need calculus.
 
 ![Screenshot](./screen.png)
 
