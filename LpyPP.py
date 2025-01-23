@@ -10,7 +10,7 @@ import tkinter as tk
 
 
 root = tk.Tk()
-root.title("LascaR")
+root.title("LascaR's parametric equation plot")
 root.geometry('1300x1000')
 
 
@@ -18,6 +18,8 @@ root.geometry('1300x1000')
 nbfunction=10
 entries={}
 labels={}
+rights={}
+lefts={}
 functions=[]
 logs={}
 xBounds=[0,1]
@@ -63,6 +65,7 @@ def plot(e):
             ys[fn]=ty
              
             plot.plot(tx,ty)
+    plot.grid(True)
  
     logs["xBounds"]=[str(xminEntry.get()),str(xmaxEntry.get())]
     logs["yBounds"]=[str(yminEntry.get()),str(ymaxEntry.get())]
@@ -82,26 +85,63 @@ def updateparam(e):
     z=t.split(',')
 
     vals={}
+    rvals={}
+    lvals={}
     for i in entries:
         vals[i]=entries[i].get()
+        rvals[i]=rights[i].get()
+        lvals[i]=lefts[i].get()
         labels[i].destroy()
+        rights[i].destroy()
+        lefts[i].destroy()
         entries[i].destroy()
     
     entries.clear()
+    rights.clear()
+    lefts.clear()
     labels.clear()
     count=0
     for i in z:
        
         labels[i]=tk.Label(root, text=i)
         labels[i].place(x=720,y=47+count*60)
-        entries[i]=tk.Scale(root, from_=0.01, to=1,tickinterval=0.1,resolution=0.01, length=500,orient=tk.HORIZONTAL,command=plot)
+        rights[i]=tk.Entry(root,name='right'+i,width=4)
+        lefts[i]=tk.Entry(root,name='left'+i,width=4)
+        if i in rvals:
+            rights[i].insert(0,rvals[i])
+        else:
+            rights[i].insert(0,1)
+            rvals[i]=1
+        
+        if i in lvals:
+            lefts[i].insert(0,lvals[i])
+        else:
+            lefts[i].insert(0,0)
+            lvals[i]=0
+
+        
+
+        from_=float(lefts[i].get())
+        to=float(rights[i].get())
+        tickinterval=(to-from_)/10
+        resolution=(to-from_)/100
+
+        entries[i]=tk.Scale(root, from_=from_, to=to,tickinterval=tickinterval,resolution=resolution, length=500,orient=tk.HORIZONTAL,command=plot)
+        
         if i in vals:
             entries[i].set(vals[i])
         else:
             entries[i].set(0.5)
-        entries[i].place(x=740,y=25+count*60)
+        entries[i].place(x=735,y=25+count*60)
+        rights[i].place(x=1250,y=65+count*60)
+        lefts[i].place(x=710,y=65+count*60) 
+        rights[i].bind("<Return>", updateparamfield)
+        lefts[i].bind("<Return>", updateparamfield)
         count+=1
 
+def updateparamfield(e):
+    updateparam(None)
+    plot(None)
 
 def zoom(d):
     global xBounds,yBounds
@@ -164,10 +204,10 @@ else:
 
 
 updateparam(None)
-print (logs)
+# print (logs)
 for k,v in enumerate(entries):
     if v in logs:
-        print ('set ',v)
+        # print ('set ',v)
         entries[v].set(float(logs[v]))
 
 if "xBounds" in logs:

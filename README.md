@@ -36,9 +36,9 @@ Run
 Enter your function equations in the 10 function field. You can add variable parameters using $ sign (eg: $a). Parameters can use only one char, $xx will be interpreted as $x.
 Use the Enter key to update functions or parameters. All variables need to be referred in "parameters" field. No error log. Refer to the console to handle errors.
 
-There is a autosave 
+There is an autosave feature which save all field between runs.
 
-
+It's ugly but it works fine !
 
 ## Contributing  
 
