@@ -53,3 +53,13 @@ Contributions are always welcome!
 ## License  
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  
+
+## Keywords
+
+- Parametric equations
+- Python
+- Math
+- Plotting
+- Tkinter
+- Matplotlib
+- Calculus
