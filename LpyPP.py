@@ -47,7 +47,7 @@ def plot(e):
             for i in zem:
             
                 fo=fo.replace('$'+i,str(entries[i].get()))
-                logs[i]=str(entries[i].get())
+                logs[i]=[str(entries[i].get()),str(lefts[i].get()),str(rights[i].get())]
 
             
             ty=[]
@@ -209,7 +209,17 @@ updateparam(None)
 for k,v in enumerate(entries):
     if v in logs:
         # print ('set ',v)
-        entries[v].set(float(logs[v]))
+
+        lefts[v].delete(0,'end')
+        lefts[v].insert(0,logs[v][1])
+        rights[v].delete(0,'end')
+        rights[v].insert(0,logs[v][2])
+updateparam(None)
+for k,v in enumerate(entries):
+    if v in logs:
+        entries[v].set(float(logs[v][0]))
+    
+
 
 if "xBounds" in logs:
     xBounds=[float(logs["xBounds"][0]),float(logs["xBounds"][1])]
