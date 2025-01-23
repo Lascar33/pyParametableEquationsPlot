@@ -15,14 +15,14 @@ Clone the project
 Go to the project directory  
 
 ~~~bash  
-  cd my-project
+  cd pyParametablePlotFunction
 ~~~
 
 Install dependencies  
 
 ~~~bash  
   pip install --upgrade pip
-  pip install matplotlib tkinter
+  pip install matplotlib Tkinter
 ~~~
 
 Run
@@ -34,11 +34,17 @@ Run
 ## How to use
 
 Enter your function equations in the 10 function field. You can add variable parameters using $ sign (eg: $a). Parameters can use only one char, $xx will be interpreted as $x.
-Use the Enter key to update functions or parameters. All variables need to be referred in "parameters" field. No error log. Refer to the console to handle errors.
-
-There is an autosave feature which save all field between runs.
+Use the Enter key to update fields. All variables need to be referred in "parameters" field. No error log. Refer to the console to handle errors.  
+There is an autosave feature which save all field between runs.  
+Function can use other above function results eg:
+~~~
+y0=$a*x+$b
+y1=$y0*12.34
+~~~
 
 It's ugly but it works fine !
+
+![Screenshot](./screen.png)
 
 ## Contributing  
 

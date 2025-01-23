@@ -11,6 +11,7 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title("LascaR's parametric equation plot")
+root.iconbitmap('lascar.ico')
 root.geometry('1300x1000')
 
 
