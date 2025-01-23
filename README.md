@@ -1,7 +1,4 @@
 
-// This file is the README for the pyParametablePlotFunction project.
-// It provides an overview and instructions on how to use the project.
-
 # Project Title  
 Lascar's parametable equation plot !
 Plot 10 equations using Python formula. The Python Math Library and all its functions are available. For more information, refer to the [Python Math Library documentation](https://docs.python.org/3/library/math.html). 
@@ -12,7 +9,7 @@ Plot 10 equations using Python formula. The Python Math Library and all its func
 Clone the project  
 
 ~~~bash  
-  git clone 
+  git clone https://github.com/Lascar33/pyParametablePlotFunction.git
 ~~~
 
 Go to the project directory  
@@ -34,12 +31,12 @@ Run
   py LpyPP.py
 ~~~
 
-## How to
+## How to use
 
-Enter your function equations. You can add variable parameters using $ sign (eg: $a). Parameters can use only one char, $xx will be interpreted as $x.
+Enter your function equations in the 10 function field. You can add variable parameters using $ sign (eg: $a). Parameters can use only one char, $xx will be interpreted as $x.
+Use the Enter key to update functions or parameters. All variables need to be referred in "parameters" field. No error log. Refer to the console to handle errors.
 
-Use  
-All variables need to be referred in "parameters" field.
+There is a autosave 
 
 
 
